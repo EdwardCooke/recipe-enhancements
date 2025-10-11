@@ -21,12 +21,6 @@ fi
 MOD_NAME="$(cat info.json | jq '.name' -r)"
 VERSION="$(cat info.json | jq '.version' -r)"
 
-if ! basename $(pwd)
-then
-  echo "Must be run from the mod directory"
-  exit 1
-fi
-
 if [ -f ${MOD_NAME}_${VERSION}.zip ]
 then
   rm -f ${MOD_NAME}_${VERSION}.zip
